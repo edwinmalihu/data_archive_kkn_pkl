@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('nama_kelompok', 50);
             $table->string('no_kelompok', 50)->unique();
             $table->string('nama_user', 50);
-            $table->integer('npm_nip');
-            $table->integer('tahun');
+            $table->varchar('npm_nip');
+            $table->varchar('tahun');
             $table->integer('semester');
             $table->timestamps();
         });

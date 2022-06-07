@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('dosens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama', 50);
-            $table->string('nip', 20)->unique();
+            $table->string('nip', 20);
             $table->string('fakultas', 50);
             $table->string('jurusan', 50);
             $table->string('agama', 10);
@@ -33,5 +33,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('dosens');
+        // $table->dropUnique('dosens_nip');
     }
 };

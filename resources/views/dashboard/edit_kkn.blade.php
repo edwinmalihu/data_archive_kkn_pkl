@@ -32,10 +32,12 @@
                                 </div>
                               </div>
                               <div class="form-group form-material floating" data-plugin="formMaterial">
+                             
+                              <?php $nip= $kkn->nama_user ?>
                                 <select class="form-control @error('nama_user') is-invalid @enderror" name="nama_user" value="$kkn->nama_user">
                                   <option>&nbsp;</option>
                                   @foreach($dosen as $p)
-                                  <option value="{{ $p->nip }}" {{ $p->nip == $p->nip ? 'selected' : '' }}>{{ $p->nama }}</option>
+                                  <option value="{{ $p->nip }}" {{ $nip == $p->nip ? 'selected' : '' }}>{{ $p->nama }}</option>
                                   @endforeach
                                 </select>
                                 <label class="floating-label">Dosen Pembimbing</label>
@@ -47,10 +49,11 @@
                               </div>
                               <div class="form-group form-material floating row" data-plugin="formMaterial">
                                 <div class="col-md-6">
+                                <?php $tahun= $kkn->tahun ?>
                                   <select class="form-control @error('tahun') is-invalid @enderror" name="tahun" >
                                     <option>&nbsp;</option>
                                     @foreach($result as $results)
-                                    <option value="{{ $results }}" {{ $results == $results ? 'selected' : '' }}>{{ $results }}</option>
+                                    <option value="{{ $results }}" {{ $tahun == $results ? 'selected' : '' }}>{{ $results }}</option>
                                     @endforeach 
                                   </select>
                                   <label class="floating-label">Tahun Ajaran</label>
@@ -63,8 +66,8 @@
                                 <div class="col-md-6">
                                   <select class="form-control @error('semester') is-invalid @enderror" name="semester" value="$kkn->semester">
                                     <option>&nbsp;</option>
-                                    <option value="ganjil" {{ $kkn->semester == 'ganjil' ? 'selected' : '' }}>ganjil</option>
-                                    <option value="genap" {{ $kkn->semester == 'genap' ? 'selected' : '' }}>genap</option>
+                                    <option value="Ganjil" {{ $kkn->semester == 'Ganjil' ? 'selected' : '' }}>Ganjil</option>
+                                    <option value="Genap" {{ $kkn->semester == 'Genap' ? 'selected' : '' }}>Genap</option>
                                 </select>
                                   <label class="floating-label">Semester</label>
                                   @error('semester')

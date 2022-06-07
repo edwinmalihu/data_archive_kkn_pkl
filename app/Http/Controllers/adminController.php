@@ -87,7 +87,7 @@ class adminController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required',
-            'nip' => 'required|unique:dosens|min:10|numeric',
+            'nip' => 'required|min:10|numeric',
             'fakultas' => 'required',
             'jurusan' => 'required',
             'agama' => 'required',
